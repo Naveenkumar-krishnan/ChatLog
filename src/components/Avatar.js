@@ -3,7 +3,7 @@ import React from 'react'
 function Avatar(props) {
   return (
     <div className="avatar" title={props.email}>
-        <img src={props.avatar} alt="avatar"/>
+      { props.avatar ? <img src={props.avatar} alt="avatar"/> : "" }
     </div>
   )
 }

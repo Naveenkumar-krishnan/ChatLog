@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { dateToTimestamp, sortByTimestamp } from './js/utils';
-import List from './components/List';
+import ChatLog from './components/ChatLog';
 import './App.css';
 
 function useFetch(url) {
@@ -50,8 +50,8 @@ function returnChat(memberList, messageList) {
 
 function App() {
   const [ chatLogs, setChatLogs ] = useState([]);
-  const messageUrl  = 'https://run.mocky.io/v3/cf8b2e79-16c1-4e2c-a288-003338355482';
-  const memberUrl   = 'https://run.mocky.io/v3/21b03580-280a-47ee-9f6e-e8bec22416db';
+  const messageUrl  = 'https://run.mocky.io/v3/5d709398-134b-4d72-b252-7c2175a67203';
+  const memberUrl   = 'https://run.mocky.io/v3/27d147dd-82ab-4bc2-8f61-814ac77c3b07';
   const messageList = useFetch(messageUrl);
   const memberList  = useFetch(memberUrl);
 
@@ -67,8 +67,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>ChatLog Message</h1>
-      <List data={chatLogs}/>
+      <ChatLog data={chatLogs}/>
     </div>
   );
 }
